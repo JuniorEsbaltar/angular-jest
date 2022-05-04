@@ -1,17 +1,19 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { TextComponent } from '../text/text.component';
+import { Component } from "@angular/core";
+import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { PageComponent } from "./page.component";
+@Component({ selector: "app-text", template: "" })
+class TextStubComponent {}
+@Component({ selector: "app-field-text", template: "" })
+class FieldTextStubComponent {}
 
-import { PageComponent } from './page.component';
-
-describe('PageComponent', () => {
+describe("PageComponent", () => {
   let component: PageComponent;
   let fixture: ComponentFixture<PageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PageComponent ]
-    })
-    .compileComponents();
+      declarations: [PageComponent, TextStubComponent, FieldTextStubComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -20,7 +22,7 @@ describe('PageComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
