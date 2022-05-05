@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { TextService } from '../../services/text.service';
 
 @Component({
   selector: 'app-field-text',
@@ -9,11 +8,11 @@ import { TextService } from '../../services/text.service';
 })
 export class FieldTextComponent {
 
+  @Output() text = new EventEmitter<string>();
   control: FormControl = new FormControl();
-  constructor(private textService: TextService) { }
-
+  constructor() { }
   sendText() {
-    this.textService.setText(this.control.value);
+    this.text.emit(this.control.value);
     this.control.reset();
   }
 }

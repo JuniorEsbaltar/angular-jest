@@ -1,2 +1,2 @@
-<app-text></app-text>
-<app-field-text></app-field-text>
+<app-text [text]="text"></app-text>
+<app-field-text (text)="onChangeText($event)"></app-field-text>
