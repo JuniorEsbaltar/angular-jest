@@ -9,7 +9,7 @@ import { FormControl } from '@angular/forms';
 export class FieldTextComponent {
 
   @Output() text = new EventEmitter<string>();
-  control: FormControl = new FormControl();
+  control: FormControl = new FormControl('');
   constructor() { }
   sendText() {
     this.text.emit(this.control.value);

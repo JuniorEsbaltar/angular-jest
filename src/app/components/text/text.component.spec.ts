@@ -22,4 +22,14 @@ describe('TextComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render text by input', () => {
+    const textElement = fixture.debugElement;
+    const pElement = textElement.nativeElement.querySelector('p');
+    
+    component.text = 'sans';
+    fixture.detectChanges();
+
+    expect(pElement.textContent).toBe('your text is: sans');
+  });
 });
